@@ -31,7 +31,6 @@
                     <targetJdk>1.8</targetJdk>
                     <rulesets>${basedir}/ruleset.xml</rulesets>
                     <includeTests>true</includeTests>
-                    <skipPmdError>false</skipPmdError>
                 </configuration>
                 <executions>
                     <execution>
