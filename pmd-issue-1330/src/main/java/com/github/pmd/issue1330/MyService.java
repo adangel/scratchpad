@@ -12,4 +12,6 @@ public class MyService extends Service {
         super(arg0, arg1);
     }
 
+    static class Foo {
+    }
 }
