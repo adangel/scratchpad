@@ -37,5 +37,5 @@ public class Example {
      System.out.println("Processing " + autofillDocument + " " + docMap + " " + rowAdder);
   }
   
-  private void myUnusedMethod() {}
+  //private void myUnusedMethod() {}
 }
