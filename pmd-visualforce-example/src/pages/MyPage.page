@@ -1,0 +1,5 @@
+
+<apex:page controller="AcRestActionsController" action="{!csrfInitMethod}">
+    <title>Sample MyPage</title>
+    <h1>Hello</h1>
+</apex:page>
