@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 
-
 function main()
 {
-    local name=$1
-    local pathToPmd=$2
-    if [ -z $name -o -z $pathToPmd ]; then
-        echo "$0 <name> <pathToPmd>"
+    local resultDir=$1
+    local name=$2
+    local pathToPmd=$3
+    if [ -z "$resultDir" -o -z "$name" -o -z "$pathToPmd" ]; then
+        echo "$0 <resultDir> <name> <pathToPmd>"
         echo
-        echo "e.g. $0 baseline pmd-bin-6.22.0"
+        echo "e.g. $0 results-2020-04-16 baseline pmd-bin-6.22.0"
         exit 1
     fi
     
     log "Simple PMD Benchmarker"
     log "----------------------"
-    prepare
-    run $name $pathToPmd
-    convert_numbers $name
+    prepare $resultDir
+    run $resultDir $name $pathToPmd
+    convert_numbers $resultDir $name
 }
 
 function log()
@@ -27,7 +27,12 @@ function log()
 
 function prepare()
 {
+    local resultDir=$1
     log "Preparing..."
+    
+    mkdir -p $resultDir
+    log "  resultDir=$resultDir"
+    
     if [ ! -e spring-framework ]; then
         git clone --branch v5.0.6.RELEASE https://github.com/spring-projects/spring-framework
     else
@@ -44,10 +49,11 @@ function prepare()
 
 function run()
 {
-    local name=$1
-    local pathToPmd=$2
-    local report="${name}-report.xml"
-    local log="${name}-log.txt"
+    local resultDir=$1
+    local name=$2
+    local pathToPmd=$3
+    local report="${resultDir}/${name}-report.xml"
+    local log="${resultDir}/${name}-log.txt"
     local ruleset="all-java.xml"
     local code="spring-framework"
 
@@ -62,16 +68,21 @@ function run()
     fi
     
     log "Running PMD..."
+    # TODO: fix LANG=C.UTF-8
     export LANG=en.utf-8 # important for decimal separators...
-    time $pathToPmd/bin/run.sh pmd -benchmark -no-cache -d $code -f xml -R $ruleset -r $report 2>&1 | tee $log
+    echo "Running PMD: pathToPmd=$pathToPmd" > $log
+    echo "java version" >> $log
+    java --version >> $log
+    time $pathToPmd/bin/run.sh pmd -benchmark -no-cache -d $code -f xml -R $ruleset -r $report 2>&1 | tee -a $log
     log "Finished running PMD".
 }
 
 function convert_numbers()
 {
-    local name=$1
-    local log="${name}-log.txt"
-    local csv="${name}-data.csv"
+    local resultDir=$1
+    local name=$2
+    local log="${resultDir}/${name}-log.txt"
+    local csv="${resultDir}/${name}-data.csv"
 
     if [ ! -e $log ]; then
         log "File $log is missing!"

@@ -1,0 +1,391 @@
+Running PMD: pathToPmd=pmd-bin-6.23.0-SNAPSHOT-pr2377
+java version
+openjdk 11.0.7 2020-04-14
+OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.7+10)
+OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.7+10, mixed mode)
+Apr 16, 2020 6:03:29 PM net.sourceforge.pmd.processor.AbstractPMDProcessor removeBrokenRules
+WARNING: Removed misconfigured rule: LoosePackageCoupling  cause: No packages or classes specified
+Apr 16, 2020 6:04:57 PM net.sourceforge.pmd.lang.dfa.SequenceChecker run
+SEVERE: aktStatus is NULL: maximum Iterations exceeded, abort 0
+Apr 16, 2020 6:06:08 PM net.sourceforge.pmd.PMD doPMD
+SEVERE: java.nio.charset.UnmappableCharacterException: Input length = 1
+Apr 16, 2020 6:06:08 PM net.sourceforge.pmd.PMD doPMD
+INFO: 
+Mandatory arguments:
+1) A java source code filename or directory
+2) A report format 
+3) A ruleset filename or a comma-delimited string of ruleset filenames
+
+For example: 
+C:\>pmd-bin-6.23.0-SNAPSHOT\bin\pmd.bat -d c:\my\source\code -f html -R java-unusedcode
+
+Languages and version suported:
+apex, ecmascript, java, jsp, modelica, plsql, pom, scala, vf, vm, wsdl, xml, xsl
+
+Available report formats and their configuration properties are:
+   codeclimate: Code Climate integration.
+   csv: Comma-separated values tabular format.
+        problem - Include Problem column   default: true
+        package - Include Package column   default: true
+        file - Include File column   default: true
+        priority - Include Priority column   default: true
+        line - Include Line column   default: true
+        desc - Include Description column   default: true
+        ruleSet - Include Rule set column   default: true
+        rule - Include Rule column   default: true
+   emacs: GNU Emacs integration.
+   empty: Empty, nothing.
+   html: HTML format
+        linePrefix - Prefix for line number anchor in the source file.
+        linkPrefix - Path to HTML source.
+   ideaj: IntelliJ IDEA integration.
+        classAndMethodName - Class and Method name, pass '.method' when processing a directory.   default: 
+        sourcePath - Source path.   default: 
+        fileName - File name.   default: 
+   summaryhtml: Summary HTML format.
+        linePrefix - Prefix for line number anchor in the source file.
+        linkPrefix - Path to HTML source.
+   text: Text format.
+   textcolor: Text format, with color support (requires ANSI console support, e.g. xterm, rxvt, etc.).
+        color - Enables colors with anything other than 'false' or '0'.   default: yes
+   textpad: TextPad integration.
+   vbhtml: Vladimir Bossicard HTML format.
+   xml: XML format.
+        encoding - XML encoding format, defaults to UTF-8.   default: UTF-8
+   xslt: XML with a XSL Transformation applied.
+        encoding - XML encoding format, defaults to UTF-8.   default: UTF-8
+        xsltFilename - The XSLT file name.
+   yahtml: Yet Another HTML format.
+        outputDir - Output directory.
+
+For example on windows: 
+C:\>pmd-bin-6.23.0-SNAPSHOT\bin\pmd.bat -dir c:\my\source\code -format text -R rulesets/java/quickstart.xml -version 1.5 -language java -debug
+C:\>pmd-bin-6.23.0-SNAPSHOT\bin\pmd.bat -dir c:\my\source\code -f xml -rulesets rulesets/java/quickstart.xml,category/java/codestyle.xml -encoding UTF-8
+C:\>pmd-bin-6.23.0-SNAPSHOT\bin\pmd.bat -d c:\my\source\code -rulesets rulesets/java/quickstart.xml -auxclasspath lib\commons-collections.jar;lib\derby.jar
+C:\>pmd-bin-6.23.0-SNAPSHOT\bin\pmd.bat -d c:\my\source\code -f html -R rulesets/java/quickstart.xml -auxclasspath file:///C:/my/classpathfile
+
+For example on *nix: 
+$ pmd-bin-6.23.0-SNAPSHOT/bin/run.sh pmd -dir /home/workspace/src/main/java/code -f html -rulesets rulesets/java/quickstart.xml,category/java/codestyle.xml
+$ pmd-bin-6.23.0-SNAPSHOT/bin/run.sh pmd -d ./src/main/java/code -R rulesets/java/quickstart.xml -f xslt -property xsltFilename=my-own.xsl
+$ pmd-bin-6.23.0-SNAPSHOT/bin/run.sh pmd -d ./src/main/java/code -f html -R rulesets/java/quickstart.xml -auxclasspath commons-collections.jar:derby.jar
+
+
+
+
+--------------------------------------------<<< Rule >>>--------------------------------------------
+Label                                              Time (secs) Self Time (secs)  # Calls     Counter
+
+CloneMethodMustImplementCloneable                       0.0594           0.0594    5,341
+UnusedFormalParameter                                   0.0642           0.0642    5,341
+SimplifyBooleanReturns                                  0.0685           0.0685    5,341
+UnusedPrivateMethod                                     0.1031           0.1031    5,341
+MethodReturnsInternalArray                              0.1415           0.1415    5,341
+UnnecessaryCaseChange                                   0.1472           0.1472    5,341
+TooManyStaticImports                                    0.1508           0.1508    5,341
+UnnecessaryLocalBeforeReturn                            0.1577           0.1577    5,341
+UnnecessaryReturn                                       0.1898           0.1898    5,341
+InefficientEmptyStringCheck                             0.1938           0.1938    5,341
+UseCollectionIsEmpty                                    0.2589           0.2589    5,341
+OnlyOneReturn                                           0.2590           0.2590    5,341
+DontImportJavaLang                                      0.2592           0.2592    5,341
+AvoidInstantiatingObjectsInLoops                        0.2615           0.2615    5,341
+FieldDeclarationsShouldBeAtStartOfClass                 0.2618           0.2618    5,341
+AvoidFieldNameMatchingTypeName                          0.2627           0.2627    5,341
+UselessStringValueOf                                    0.2654           0.2654    5,341
+SuspiciousOctalEscape                                   0.2658           0.2658    5,341
+UseStringBufferLength                                   0.2667           0.2667    5,341
+SuspiciousHashcodeMethodName                            0.2677           0.2677    5,341
+DuplicateImports                                        0.2741           0.2741    5,341
+IdempotentOperations                                    0.2755           0.2755    5,341
+ExceptionAsFlowControl                                  0.2761           0.2761    5,341
+PreserveStackTrace                                      0.2787           0.2787    5,341
+UnnecessaryConversionTemporary                          0.2794           0.2794    5,341
+ExcessivePublicCount                                    0.2795           0.2795    5,341
+AssignmentToNonFinalStatic                              0.2803           0.2803    5,341
+AvoidDollarSigns                                        0.2808           0.2808    5,341
+InefficientStringBuffering                              0.2846           0.2846    5,341
+SwitchDensity                                           0.2883           0.2883    5,341
+AvoidUsingOctalValues                                   0.2884           0.2884    5,341
+BigIntegerInstantiation                                 0.2886           0.2886    5,341
+ImportFromSamePackage                                   0.2911           0.2911    5,341
+BrokenNullCheck                                         0.2916           0.2916    5,341
+AvoidCatchingThrowable                                  0.2931           0.2931    5,341
+CompareObjectsWithEquals                                0.2937           0.2937    5,341
+IdenticalCatchBranches                                  0.2951           0.2951    5,341
+AppendCharacterWithChar                                 0.2962           0.2962    5,341
+OverrideBothEqualsAndHashcode                           0.2976           0.2976    5,341
+GuardLogStatement                                       0.2995           0.2995    5,341
+MissingOverride                                         0.3020           0.3020    5,341
+ExcessiveParameterList                                  0.3028           0.3028    5,341
+NonThreadSafeSingleton                                  0.3028           0.3028    5,341
+UseStringBufferForStringAppends                         0.3031           0.3031    5,341
+BooleanInstantiation                                    0.3063           0.3063    5,341
+UseIndexOfChar                                          0.3071           0.3071    5,341
+SingletonClassReturningNewInstance                      0.3097           0.3097    5,341
+AvoidDeeplyNestedIfStmts                                0.3125           0.3125    5,341
+UseUtilityClass                                         0.3128           0.3128    5,341
+ConfusingTernary                                        0.3128           0.3128    5,341
+AvoidFieldNameMatchingMethodName                        0.3172           0.3172    5,341
+CheckSkipResult                                         0.3206           0.3206    5,341
+AssignmentInOperand                                     0.3223           0.3223    5,341
+ConsecutiveLiteralAppends                               0.3287           0.3287    5,341
+DontImportSun                                           0.3291           0.3291    5,341
+CheckResultSet                                          0.3311           0.3311    5,341
+ExcessiveImports                                        0.3332           0.3332    5,341
+SingularField                                           0.3419           0.3419    5,341
+UselessOperationOnImmutable                             0.3475           0.3475    5,341
+InsufficientStringBufferDeclaration                     0.3486           0.3486    5,341
+UselessOverridingMethod                                 0.3517           0.3517    5,341
+MethodNamingConventions                                 0.3552           0.3552    5,341
+StringToString                                          0.3571           0.3571    5,341
+UnnecessaryWrapperObjectCreation                        0.3648           0.3648    5,341
+LooseCoupling                                           0.3667           0.3667    5,341
+ConsecutiveAppendsShouldReuse                           0.3752           0.3752    5,341
+DoubleCheckedLocking                                    0.3838           0.3838    5,341
+CommentDefaultAccessModifier                            0.3906           0.3906    5,341
+AvoidCallingFinalize                                    0.3947           0.3947    5,341
+CouplingBetweenObjects                                  0.3974           0.3974    5,341
+AvoidDuplicateLiterals                                  0.3994           0.3994    5,341
+SignatureDeclareThrowsException                         0.4021           0.4021    5,341
+AvoidReassigningParameters                              0.4047           0.4047    5,341
+BeanMembersShouldSerialize                              0.4169           0.4169    5,341
+NPathComplexity                                         0.4171           0.4171    5,341
+ExcessiveMethodLength                                   0.4175           0.4175    5,341
+PrematureDeclaration                                    0.4349           0.4349    5,341
+ArrayIsStoredDirectly                                   0.4491           0.4491    5,341
+ExcessiveClassLength                                    0.4558           0.4558    5,341
+UnusedPrivateField                                      0.4625           0.4625    5,341
+NcssCount                                               0.4648           0.4648    5,341
+LocalVariableCouldBeFinal                               0.4701           0.4701    5,341
+MoreThanOneLogger                                       0.4786           0.4786    5,341
+CyclomaticComplexity                                    0.4897           0.4897    5,341
+MethodWithSameNameAsEnclosingClass                      0.5031           0.5031    5,341
+MethodArgumentCouldBeFinal                              0.5037           0.5037    5,341
+CommentSize                                             0.5205           0.5205    5,341
+SingleMethodSingleton                                   0.6435           0.6435    5,341
+DataClass                                               0.6669           0.6669    5,341
+ConstructorCallsOverridableMethod                       0.7150           0.7150    5,341
+ImmutableField                                          0.7642           0.7642    5,341
+CloseResource                                           0.8756           0.8756    5,341
+TestClassWithoutTestCases                               0.9057           0.9057    5,341
+UnnecessaryConstructor                                  0.9295           0.9295    5,341
+JUnitUseExpected                                        0.9325           0.9325    5,341
+MissingStaticMethodInNonInstantiatableClass             0.9721           0.9721    5,341
+UnusedImports                                           1.0071           1.0071    5,341
+JUnitAssertionsShouldIncludeMessage                     1.0506           1.0506    5,341
+GodClass                                                1.4308           1.4308    5,341
+CommentContent                                          1.6856           1.6856    5,341
+DataflowAnomalyAnalysis                                 1.8179           1.8179    5,341
+UseDiamondOperator                                      1.9173           1.9173    5,341
+JUnitTestsShouldIncludeAssert                           2.0824           2.0824    5,341
+LawOfDemeter                                            2.2421           2.2421    5,341
+CommentRequired                                         2.4425           2.4425    5,341
+UnusedNullCheckInEquals                                 2.5058           2.5058    5,341
+AvoidAccessibilityAlteration                            2.8011           2.8011    5,341
+
+Total Rule                                             55.8450          55.8450
+
+---------------------------------------<<< Rulechain Rule >>>---------------------------------------
+Label                                              Time (secs) Self Time (secs)  # Calls     Counter
+
+EmptySwitchStatements                                   0.0022           0.0022    5,341          97
+EmptyStatementNotInLoop                                 0.0025           0.0025    5,341          10
+EmptyWhileStmt                                          0.0026           0.0026    5,341         345
+EmptySynchronizedBlock                                  0.0027           0.0027    5,341         363
+EmptyInitializer                                        0.0028           0.0028    5,341         126
+EmptyFinallyBlock                                       0.0028           0.0028    5,341         387
+DefaultLabelNotLastInSwitchStmt                         0.0048           0.0048    5,341          97
+DoNotThrowExceptionInFinally                            0.0051           0.0051    5,341         387
+SwitchStmtsShouldHaveDefault                            0.0051           0.0051    5,341          97
+NonStaticInitializer                                    0.0053           0.0053    5,341         126
+WhileLoopWithLiteralBoolean                             0.0055           0.0055    5,341         371
+NonCaseLabelInSwitchStatement                           0.0065           0.0065    5,341          97
+TooFewBranchesForASwitchStatement                       0.0070           0.0070    5,341          97
+AvoidMultipleUnaryOperators                             0.0074           0.0074    5,341       3,932
+InsecureCryptoIv                                        0.0097           0.0097    5,341      29,143
+ForLoopShouldBeWhileLoop                                0.0097           0.0097    5,341       2,374
+EmptyTryBlock                                           0.0098           0.0098    5,341       2,918
+DontUseFloatTypeForLoopIndices                          0.0108           0.0108    5,341       2,374
+ForLoopVariableCount                                    0.0111           0.0111    5,341         835
+HardCodedCryptoKey                                      0.0119           0.0119    5,341      29,143
+SimplifiedTernary                                       0.0125           0.0125    5,341       1,888
+UnsynchronizedStaticFormatter                           0.0125           0.0125    5,341      13,050
+JumbledIncrementer                                      0.0138           0.0138    5,341       2,374
+ReplaceEnumerationWithIterator                          0.0143           0.0143    5,341       2,311
+AvoidBranchingStatementAsLastInLoop                     0.0143           0.0143    5,341      24,505
+LogicInversion                                          0.0147           0.0147    5,341       3,036
+AvoidRethrowingException                                0.0147           0.0147    5,341       2,898
+AvoidCatchingNPE                                        0.0153           0.0153    5,341       2,898
+StringInstantiation                                     0.0156           0.0156    5,341      29,143
+AvoidThrowingNewInstanceOfSameException                 0.0162           0.0162    5,341       2,898
+ExtendsObject                                           0.0174           0.0174    5,341       2,794
+NullAssignment                                          0.0187           0.0187    5,341      13,717
+GenericsNaming                                          0.0207           0.0207    5,341       5,183
+NoPackage                                               0.0208           0.0208    5,341       5,341
+MissingBreakInSwitch                                    0.0220           0.0220    5,341          97
+RemoteSessionInterfaceNamingConvention                  0.0222           0.0222    5,341       8,868
+MisplacedNullCheck                                      0.0227           0.0227    5,341       3,575
+LocalInterfaceSessionNamingConvention                   0.0230           0.0230    5,341       8,868
+AvoidInstanceofChecksInCatchClause                      0.0240           0.0240    5,341       2,898
+DoNotExtendJavaLangError                                0.0244           0.0244    5,341       8,868
+RemoteInterfaceNamingConvention                         0.0258           0.0258    5,341       8,868
+RedundantFieldInitializer                               0.0259           0.0259    5,341      13,050
+UnnecessaryAnnotationValueElement                       0.0259           0.0259    5,341      43,211
+AvoidCatchingGenericException                           0.0260           0.0260    5,341       2,898
+MDBAndSessionBeanNamingConvention                       0.0264           0.0264    5,341       5,183
+LocalHomeNamingConvention                               0.0268           0.0268    5,341       8,868
+UseTryWithResources                                     0.0273           0.0273    5,341       2,918
+UncommentedEmptyConstructor                             0.0286           0.0286    5,341       3,840
+DoNotExtendJavaLangThrowable                            0.0301           0.0301    5,341       8,868
+SimplifyBooleanExpressions                              0.0361           0.0361    5,341      11,643
+LocalVariableNamingConventions                          0.0380           0.0380    5,341      91,416
+AvoidProtectedMethodInFinalClassNotExtending            0.0403           0.0403    5,341       8,868
+ClassCastExceptionWithToArray                           0.0409           0.0409    5,341       6,627
+UnconditionalIfStatement                                0.0413           0.0413    5,341      16,434
+EmptyIfStmt                                             0.0422           0.0422    5,341      16,434
+AddEmptyString                                          0.0425           0.0425    5,341       6,212
+CallSuperInConstructor                                  0.0425           0.0425    5,341       8,868
+AbstractClassWithoutAnyMethod                           0.0427           0.0427    5,341       8,868
+AvoidLosingExceptionInformation                         0.0433           0.0433    5,341       2,898
+FieldNamingConventions                                  0.0440           0.0440    5,341      13,565
+FormalParameterNamingConventions                        0.0446           0.0446    5,341      91,416
+UseCorrectExceptionLogging                              0.0448           0.0448    5,341       2,898
+MissingSerialVersionUID                                 0.0452           0.0452    5,341       8,868
+UnnecessaryModifier                                     0.0466           0.0466    5,341      70,757
+BadComparison                                           0.0495           0.0495    5,341      11,643
+PackageCase                                             0.0496           0.0496    5,341       5,340
+StaticEJBFieldShouldBeFinal                             0.0524           0.0524    5,341       8,868
+AvoidProtectedFieldInFinalClass                         0.0531           0.0531    5,341       8,868
+AvoidUsingHardCodedIP                                   0.0535           0.0535    5,341     111,837
+ClassNamingConventions                                  0.0556           0.0556    5,341       9,420
+UnusedLocalVariable                                     0.0563           0.0563    5,341      37,986
+EmptyCatchBlock                                         0.0569           0.0569    5,341       2,898
+AvoidUsingVolatile                                      0.0574           0.0574    5,341      13,050
+UseEqualsToCompareStrings                               0.0575           0.0575    5,341      11,643
+AvoidThrowingRawExceptionTypes                          0.0610           0.0610    5,341       3,596
+AvoidStringBufferField                                  0.0648           0.0648    5,341      13,050
+FinalFieldCouldBeStatic                                 0.0661           0.0661    5,341      13,050
+DoubleBraceInitialization                               0.0712           0.0712    5,341      29,143
+ClassWithOnlyPrivateConstructorsShouldBeFinal           0.0761           0.0761    5,341       5,183
+CollapsibleIfStatements                                 0.0781           0.0781    5,341      16,434
+ShortClassName                                          0.0783           0.0783    5,341       8,868
+LongInstantiation                                       0.0827           0.0827    5,341      29,143
+IntegerInstantiation                                    0.0842           0.0842    5,341      29,143
+AvoidMessageDigestField                                 0.0856           0.0856    5,341      13,050
+UncommentedEmptyMethodBody                              0.0900           0.0900    5,341      43,778
+ByteInstantiation                                       0.0912           0.0912    5,341      29,143
+ShortInstantiation                                      0.0916           0.0916    5,341      29,143
+EmptyMethodInAbstractClassShouldBeAbstract              0.0922           0.0922    5,341       8,868
+AvoidThrowingNullPointerException                       0.0947           0.0947    5,341      29,143
+AvoidReassigningLoopVariables                           0.1047           0.1047    5,341      37,986
+UseArrayListInsteadOfVector                             0.1088           0.1088    5,341       5,341
+SimpleDateFormatNeedsLocale                             0.1121           0.1121    5,341      29,143
+ReturnEmptyArrayRatherThanNull                          0.1175           0.1175    5,341      43,778
+InvalidLogMessageFormat                                 0.1216           0.1216    5,341     377,040
+AvoidUncheckedExceptionsInSignatures                    0.1256           0.1256    5,341      47,618
+ConstantsInInterface                                    0.1272           0.1272    5,341       8,868
+StringBufferInstantiationWithChar                       0.1282           0.1282    5,341      29,143
+UseShortArrayInitializer                                0.1396           0.1396    5,341      51,112
+AvoidLiteralsInIfCondition                              0.1421           0.1421    5,341      16,434
+BooleanGetMethodName                                    0.1451           0.1451    5,341      43,778
+AvoidSynchronizedAtMethodLevel                          0.1587           0.1587    5,341      43,778
+CloneMethodReturnTypeMustMatchClassName                 0.1761           0.1761    5,341      43,778
+LinguisticNaming                                        0.1799           0.1799    5,341      94,814
+JUnit4TestShouldUseTestAnnotation                       0.1865           0.1865    5,341       8,868
+UseVarargs                                              0.1871           0.1871    5,341      47,923
+FinalizeOverloaded                                      0.1908           0.1908    5,341      43,778
+FinalizeShouldBeProtected                               0.1926           0.1926    5,341      43,778
+FinalizeOnlyCallsSuperFinalize                          0.2002           0.2002    5,341      43,778
+CloneMethodMustBePublic                                 0.2120           0.2120    5,341      43,778
+EmptyFinalizer                                          0.2131           0.2131    5,341      43,778
+FinalizeDoesNotCallSuperFinalize                        0.2138           0.2138    5,341      43,778
+UseObjectForClearerAPI                                  0.2242           0.2242    5,341      43,778
+OneDeclarationPerLine                                   0.2245           0.2245    5,341      51,036
+DontCallThreadRun                                       0.2271           0.2271    5,341      93,121
+ForLoopCanBeForeach                                     0.2527           0.2527    5,341       2,374
+CloneThrowsCloneNotSupportedException                   0.2539           0.2539    5,341      43,778
+ShortMethodName                                         0.2631           0.2631    5,341      43,778
+TooManyFields                                           0.2739           0.2739    5,341       8,868
+JUnit4TestShouldUseBeforeAnnotation                     0.2792           0.2792    5,341      64,879
+AvoidEnumAsIdentifier                                   0.2807           0.2807    5,341      91,416
+DefaultPackage                                          0.2831           0.2831    5,341       8,868
+EmptyStatementBlock                                     0.2851           0.2851    5,341     177,146
+JUnit4TestShouldUseAfterAnnotation                      0.2955           0.2955    5,341      64,879
+AvoidArrayLoops                                         0.3028           0.3028    5,341     164,696
+DetachedTestCase                                        0.3047           0.3047    5,341      64,879
+AvoidDecimalLiteralsInBigDecimalConstructor             0.3130           0.3130    5,341      29,143
+AvoidAssertAsIdentifier                                 0.3161           0.3161    5,341      91,416
+ReturnFromFinallyBlock                                  0.3251           0.3251    5,341         387
+UseNotifyAllInsteadOfNotify                             0.3362           0.3362    5,341      93,121
+TooManyMethods                                          0.3381           0.3381    5,341       8,868
+UseArraysAsList                                         0.3501           0.3501    5,341     164,696
+DoNotHardCodeSDCard                                     0.3752           0.3752    5,341     106,496
+UseConcurrentHashMap                                    0.3785           0.3785    5,341     138,796
+ReplaceHashtableWithMap                                 0.4093           0.4093    5,341     138,796
+AvoidUsingShortType                                     0.4129           0.4129    5,341     116,569
+ReplaceVectorWithList                                   0.4148           0.4148    5,341     138,796
+JUnit4SuitesShouldUseSuiteAnnotation                    0.4356           0.4356    5,341      64,879
+UnnecessaryFullyQualifiedName                           0.5018           0.5018    5,341     596,713
+SuspiciousEqualsMethodName                              0.5198           0.5198    5,341      43,778
+LongVariable                                            0.5450           0.5450    5,341      91,416
+AtLeastOneConstructor                                   0.5903           0.5903    5,341       8,868
+SimplifyConditional                                     0.6008           0.6008    5,341     337,693
+UseProperClassLoader                                    0.6258           0.6258    5,341     252,817
+InstantiationToGetClass                                 0.6481           0.6481    5,341     252,817
+CallSuperLast                                           0.6530           0.6530    5,341      43,778
+ShortVariable                                           0.6817           0.6817    5,341      91,416
+AvoidThreadGroup                                        0.7320           0.7320    5,341     281,960
+ProperCloneImplementation                               0.7495           0.7495    5,341      43,778
+ControlStatementBraces                                  0.8772           0.8772    5,341     168,282
+AvoidFileStream                                         0.8973           0.8973    5,341     470,274
+AvoidUsingNativeCode                                    0.9137           0.9137    5,341     377,040
+CallSuperFirst                                          0.9143           0.9143    5,341      43,778
+DoNotUseThreads                                         1.0392           1.0392    5,341     266,011
+AvoidPrintStackTrace                                    1.0549           1.0549    5,341     470,274
+UnnecessaryBooleanAssertion                             1.0632           1.0632    5,341       8,868
+UseAssertNullInsteadOfAssertTrue                        1.0913           1.0913    5,341       8,868
+UseAssertSameInsteadOfAssertTrue                        1.1069           1.1069    5,341       8,868
+JUnitStaticSuite                                        1.1213           1.1213    5,341       8,868
+JUnitSpelling                                           1.1802           1.1802    5,341       8,868
+SystemPrintln                                           1.1900           1.1900    5,341     377,040
+SimplifyStartsWith                                      1.2066           1.2066    5,341     470,274
+DoNotCallGarbageCollectionExplicitly                    1.2286           1.2286    5,341     377,040
+AbstractClassWithoutAbstractMethod                      1.2318           1.2318    5,341       8,868
+OptimizableToArrayCall                                  1.2504           1.2504    5,341     470,274
+DoNotCallSystemExit                                     1.2512           1.2512    5,341     377,040
+UseAssertEqualsInsteadOfAssertTrue                      1.2604           1.2604    5,341       8,868
+UseUnderscoresInNumericLiterals                         1.2821           1.2821    5,341     106,496
+SimplifyBooleanAssertion                                1.2964           1.2964    5,341       8,868
+JUnitTestContainsTooManyAsserts                         1.3365           1.3365    5,341      43,778
+EqualsNull                                              1.5379           1.5379    5,341     470,274
+UseAssertTrueInsteadOfAssertEquals                      1.6490           1.6490    5,341     470,274
+UselessParentheses                                      1.8685           1.8685    5,341     337,693
+UselessQualifiedThis                                    2.3431           2.3431    5,341     470,274
+UseLocaleWithCaseConversions                            2.4880           2.4880    5,341     470,274
+PositionLiteralsFirstInComparisons                      2.7039           2.7039    5,341     470,274
+PositionLiteralsFirstInCaseInsensitiveComparisons       2.7089           2.7089    5,341     470,274
+ProperLogger                                            5.6125           5.6125    5,341      13,050
+
+Total Rulechain Rule                                   66.3047          66.3047
+
+------------------------------------------<<< Summary  >>>------------------------------------------
+Label                                              Time (secs) Self Time (secs)  # Calls     Counter
+
+Rule                                                   56.2532           0.4082    5,341
+Rulechain Rule                                         66.6170           0.3124    5,341
+Collect Files                                           0.3489           0.3489        1
+Load Rules                                              0.4040           0.4040        1
+Parser                                                 10.9257          10.9257    5,342
+Qualified Name Resolution                               1.3596           1.3596    5,342
+Symbol Table                                            7.1817           7.1817    5,342
+Dfa                                                     1.7258           1.7258    5,342
+Type Resolution                                        12.9051          12.9051    5,341
+Rulechain Visit                                         0.5634           0.5634    5,341
+Reporting                                               1.4600           1.4600    5,343
+File Processing                                       159.8224         158.4074        1
+Unaccounted                                             1.8382           1.8382
+
+-------------------------------------------<<< Total  >>>-------------------------------------------
+Label                                              Time (secs) Self Time (secs)  # Calls     Counter
+
+Wall Clock Time                                       160.7970
