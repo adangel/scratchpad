@@ -54,8 +54,16 @@ function run()
     local pathToPmd=$3
     local report="${resultDir}/${name}-report.xml"
     local log="${resultDir}/${name}-log.txt"
-    local ruleset="all-java.xml"
+    local ruleset="rulesets/internal/all-java.xml"
     local code="spring-framework"
+    local numthreads=$PMD_THREADS
+
+    if [ -z $numthreads ]; then
+	log "Monothreaded run"
+	numthreads=1
+    else
+	log "Running with $numthreads threads"
+    fi
 
     if [ ! -e $pathToPmd/bin/run.sh ]; then
         log "File $pathToPmd/bin/run.sh not found!"
@@ -72,7 +80,7 @@ function run()
     echo "Running PMD: pathToPmd=$pathToPmd" > $log
     echo "java version" >> $log
     java --version >> $log
-    time $pathToPmd/bin/run.sh pmd -benchmark -no-cache -d $code -f xml -R $ruleset -r $report 2>&1 | tee -a $log
+    time $pathToPmd/bin/run.sh pmd -benchmark -no-cache -d $code -f xml -R $ruleset -r $report -t $numthreads 2>&1 | tee -a $log
     log "Finished running PMD".
 }
 
