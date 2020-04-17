@@ -68,8 +68,7 @@ function run()
     fi
     
     log "Running PMD..."
-    # TODO: fix LANG=C.UTF-8
-    export LANG=en.utf-8 # important for decimal separators...
+    export LANG=C.UTF-8 # important for decimal separators...
     echo "Running PMD: pathToPmd=$pathToPmd" > $log
     echo "java version" >> $log
     java --version >> $log
