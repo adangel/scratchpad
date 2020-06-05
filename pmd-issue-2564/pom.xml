@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <pmdVersion>6.21.0</pmdVersion>
+        <pmdVersion>6.24.0</pmdVersion>
     </properties>
 
     <build>
@@ -21,13 +21,28 @@
                     <version>3.13.0</version>
                     <dependencies>
                         <dependency>
-                            <groupId>net.sourceforge.pmd</groupId>
-                            <artifactId>pmd-apex</artifactId>
-                            <version>${pmdVersion}</version>
+                          <groupId>net.sourceforge.pmd</groupId>
+                          <artifactId>pmd-core</artifactId>
+                          <version>${pmdVersion}</version>
+                        </dependency>
+                        <dependency>
+                          <groupId>net.sourceforge.pmd</groupId>
+                          <artifactId>pmd-java</artifactId>
+                          <version>${pmdVersion}</version>
+                        </dependency>
+                        <dependency>
+                          <groupId>net.sourceforge.pmd</groupId>
+                          <artifactId>pmd-javascript</artifactId>
+                          <version>${pmdVersion}</version>
+                        </dependency>
+                        <dependency>
+                          <groupId>net.sourceforge.pmd</groupId>
+                          <artifactId>pmd-jsp</artifactId>
+                          <version>${pmdVersion}</version>
                         </dependency>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
-                            <artifactId>pmd-core</artifactId>
+                            <artifactId>pmd-apex</artifactId>
                             <version>${pmdVersion}</version>
                         </dependency>
                     </dependencies>
