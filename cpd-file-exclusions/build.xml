@@ -1,0 +1,17 @@
+<project>
+    <target name="cpd">
+        <taskdef name="cpd" classname="net.sourceforge.pmd.cpd.CPDTask">
+            <classpath>
+                <fileset dir="${pmd.path}/lib">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </taskdef>
+        <cpd minimumTokenCount="2">
+            <fileset dir="src">
+                <include name="**/*.cs"/>
+                <exclude name="**/*.Designer.cs"/>
+            </fileset>
+        </cpd>
+    </target>
+</project>
