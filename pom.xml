@@ -1,0 +1,58 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.sourceforge.pmd.it</groupId>
+    <artifactId>auxclasspath-java-runtime</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <java.version>8</java.version>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <pmd.plugin.version>3.28.0</pmd.plugin.version>
+    </properties>
+
+    <build>
+       <plugins>
+           <plugin>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${pmd.plugin.version}</version>
+                <configuration>
+                    <targetJdk>${java.version}</targetJdk>
+                    <rulesets>
+                        <ruleset>custom-ruleset.xml</ruleset>
+                    </rulesets>
+                    <printFailingErrors>true</printFailingErrors>
+                    <verbose>false</verbose>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals><goal>check</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+<!--
+            <plugin>
+              <artifactId>maven-toolchains-plugin</artifactId>
+              <version>3.3.0</version>
+              <executions>
+                <execution>
+                  <goals>
+                    <goal>toolchain</goal>
+                  </goals>
+                </execution>
+              </executions>
+              <configuration>
+                <toolchains>
+                  <jdk>
+                    <version>8</version>
+                  </jdk>
+                </toolchains>
+              </configuration>
+            </plugin>
+-->
+        </plugins>
+    </build>
+</project>
