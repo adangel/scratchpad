@@ -32,27 +32,60 @@
                     </execution>
                 </executions>
             </plugin>
-
-<!--
-            <plugin>
-              <artifactId>maven-toolchains-plugin</artifactId>
-              <version>3.3.0</version>
-              <executions>
-                <execution>
-                  <goals>
-                    <goal>toolchain</goal>
-                  </goals>
-                </execution>
-              </executions>
-              <configuration>
-                <toolchains>
-                  <jdk>
-                    <version>8</version>
-                  </jdk>
-                </toolchains>
-              </configuration>
-            </plugin>
--->
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>useToolchainPlugin</id>
+            <activation>
+                <property>
+                    <name>toolchain.jdk.version</name>
+                </property>
+            </activation>
+            <build>
+              <plugins>
+                <plugin>
+                  <artifactId>maven-toolchains-plugin</artifactId>
+                  <version>3.3.0</version>
+                  <executions>
+                    <execution>
+                      <goals>
+                        <goal>toolchain</goal>
+                      </goals>
+                    </execution>
+                  </executions>
+                  <configuration>
+                    <toolchains>
+                      <jdk>
+                        <version>${toolchain.jdk.version}</version>
+                      </jdk>
+                    </toolchains>
+                  </configuration>
+                </plugin>
+              </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>usePmdToolchainConfig</id>
+            <activation>
+                <property>
+                    <name>pmdToolchain.jdk.version</name>
+                </property>
+            </activation>
+            <build>
+              <plugins>
+                  <plugin>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <configuration>
+                          <jdkToolchain>
+                              <version>${pmdToolchain.jdk.version}</version>
+                          </jdkToolchain>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
