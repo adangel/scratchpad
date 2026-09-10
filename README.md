@@ -69,6 +69,39 @@ $ ./mvnw verify -Dpmd.plugin.version=3.28.1-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
 ```
 
+## Runtime Java 25, targetJdk=8, no toolchains found
+See https://github.com/apache/maven-pmd-plugin/pull/726
+
+- Toolchain is searched with targetJdk, but none is found
+- Warning is issued
+
+```
+$ ./mvnw --version
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: /home/andreas/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f
+Java version: 25.0.2, vendor: Eclipse Adoptium, runtime: /home/andreas/programs/openjdk/eclipse-temurin/jdk-25.0.2+10
+Default locale: de_DE, platform encoding: UTF-8
+OS name: "linux", version: "7.1.12+deb14-amd64", arch: "amd64", family: "unix"
+```
+
+```
+$ ./mvnw verify -Dpmd.plugin.version=3.28.1-SNAPSHOT --global-toolchains=empty-toolchains.xml --toolchains=empty-toolchains.xml 
+[INFO] --- pmd:3.28.1-SNAPSHOT:pmd (pmd) @ auxclasspath-java-runtime ---
+[WARNING] Adding current java runtime classes from /home/andreas/programs/openjdk/eclipse-temurin/jdk-25.0.2+10/lib/jrt-fs.jar to aux classpath. Please make sure to configure a toolchain for java version 8 in your toolchains.xml. See also <https://maven.apache.org/plugins/maven-pmd-plugin/examples/targetJdk.html>.
+[INFO] PMD version: 7.27.0
+[INFO] 
+[INFO] <<< pmd:3.28.1-SNAPSHOT:check (default) < :pmd @ auxclasspath-java-runtime <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.28.1-SNAPSHOT:check (default) @ auxclasspath-java-runtime ---
+[WARNING] PMD Failure: CloseResourceExample:6 Rule:CloseResource Priority:3 Ensure that resources like this ForkJoinPool object are closed after use.
+[WARNING] PMD Failure: CloseResourceExample:18 Rule:CloseResource Priority:3 Ensure that resources like this ExecutorService object are closed after use.
+[WARNING] PMD Failure: UnnecessaryCastExample:8 Rule:UnnecessaryCast Priority:3 Unnecessary cast (byte[]).
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+```
+
 ## Runtime Java 25, targetJdk=8, with toolchain plugin
 See https://github.com/apache/maven-pmd-plugin/pull/726
 
